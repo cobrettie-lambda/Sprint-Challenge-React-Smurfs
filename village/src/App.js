@@ -22,7 +22,7 @@ class App extends Component {
         })
       })
       .catch((error) => {
-        console.log('Server Error', error)
+        console.error('Server Error', error)
       })
   }
   // add any needed code to ensure that the smurfs collection exists on state and it has data coming from the server
