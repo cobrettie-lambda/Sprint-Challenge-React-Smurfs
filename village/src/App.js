@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import { Route, NavLink } from 'react-router-dom';
 import axios from 'axios';
 
-import './App.css';
 import SmurfForm from './components/SmurfForm';
 import Smurfs from './components/Smurfs';
+import './App.css';
+import "materialize-css/dist/css/materialize.min.css";
 
 class App extends Component {
   constructor(props) {
