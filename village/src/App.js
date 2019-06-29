@@ -46,9 +46,9 @@ class App extends Component {
 
     return (
       <div className="App">
-        <nav>
-          <NavLink to="/">Villagers</NavLink>
-          <NavLink to="/smurf-form">Add Smurf To Village</NavLink>
+        <nav className="nav-bar">
+          <NavLink to="/" className="nav-link">Villagers</NavLink>
+          <NavLink to="/smurf-form" className="nav-link">Add Smurf To Village</NavLink>
         </nav>
 
         <Route exact path ="/" render={(props) => <Smurfs {...props} smurfs={smurfs}/>}/>
