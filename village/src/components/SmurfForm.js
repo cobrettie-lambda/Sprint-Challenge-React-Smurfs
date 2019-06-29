@@ -19,7 +19,7 @@ class SmurfForm extends Component {
     const payload = { name, age, height }
 
     axios
-      .post(`http://localhost:3333/smurfs`, payload)
+      .post('http://localhost:3333/smurfs', payload)
       .then(response => {
         this.setState({
           errMsg: null
@@ -39,10 +39,11 @@ class SmurfForm extends Component {
 
   render() {
     const { errMsg } = this.state
-    
+
     return (
       <div className="SmurfForm">
-        <form onSubmit={this.handleAdd}>
+        <form onSubmit={this.addSmurf}>
+          <p>{errMsg}</p>
           <input
             onChange={this.handleInputChange}
             placeholder="name"
