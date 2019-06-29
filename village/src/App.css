@@ -41,3 +41,18 @@
   border-radius: 5px;
   margin: 30px auto;
 }
+
+/* form styling */
+.SmurfForm {
+  margin: 0 auto;
+  width: 50%;
+}
+
+.SmurfForm form .form-input {
+  padding: 10px 10px;
+}
+
+.SmurfForm button {
+  margin: 20px 0;
+  padding: 10px;
+}
