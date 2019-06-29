@@ -29,6 +29,7 @@
 
 .smurf-heading {
   font-size: 5rem;
+  padding-bottom: 40px;
 }
 
 .smurfs {
@@ -37,5 +38,6 @@
 
 .Smurf {
   border: 1px solid #373737;
-  margin: 20px auto;
+  border-radius: 5px;
+  margin: 30px auto;
 }
