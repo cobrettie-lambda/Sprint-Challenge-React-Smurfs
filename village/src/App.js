@@ -11,43 +11,48 @@ class App extends Component {
     super(props);
     this.state = {
       smurfs: [],
-      isLoading: false,
-      errMsg: ''
+      // isLoading: false,
+      // errMsg: ''
     };
   }
 
   componentDidMount() {
     axios
       .get('http://localhost:3333/smurfs')
-      .then((response) => {
+      .then(response => {
+        console.log(response.data)
         this.setState({
           smurfs: response.data
         })
       })
-      .catch((error) => {
+      .catch(error => {
         console.error('Server Error', error)
       })
   }
 
-  addSmurf = (smurf) => {
-    axios
-      .post('http://localhost:3333/smurfs', smurf)
-      .then(res => this.setState({smurfs: res.data}))
-      .catch(err => console.log(err))
+  // addSmurf = (smurf) => {
+  //   axios
+  //     .post('http://localhost:3333/smurfs', smurf)
+  //     .then(response => this.setState({smurfs: response.data}))
+  //     .catch(error => console.log(error))
+  // }
+
+  updateSmurf = (smurfs) => {
+    this.setState({ smurfs })
   }
 
   render() {
+    const { smurfs } = this.state
+
     return (
       <div className="App">
-        {/* <SmurfForm addSmurf={this.addSmurf}/>
-        <Smurfs smurfs={this.state.smurfs} /> */}
         <nav>
-          <NavLink to="/">to Village</NavLink>
-          <NavLink to="/smurf-form">Add Smurf</NavLink>
+          <NavLink to="/">Villagers</NavLink>
+          <NavLink to="/smurf-form">Add Smurf To Village</NavLink>
         </nav>
 
-        <Route exact path ="/" render={props => <Smurfs {...props} smurfs={this.state.smurfs}/>}/>
-        <Route exact path = "/smurf-form" render={props => <SmurfForm {...props} addSmurf={this.addSmurf}/>}/>
+        <Route exact path ="/" render={(props) => <Smurfs {...props} smurfs={smurfs}/>}/>
+        <Route exact path = "/smurf-form" render={(props) => <SmurfForm {...props} updateSmurf={this.updateSmurf}/>}/>
       </div>
     );
   }
